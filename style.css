@@ -1,0 +1,212 @@
+:root{
+    /* Primary */
+    --Tomato: hsl(4, 100%, 67%);
+    --flourescentPink: hsl(347, 100%, 66%);
+    --veryLightTomato: hsl(5, 70%, 90%);
+    /* Neutral */
+    --DarkSlateGrey: hsl(234, 29%, 20%);
+    --CharcoalGrey: hsl(235, 18%, 26%);
+    --Grey: hsl(231, 7%, 60%);
+    --White: hsl(0, 0%, 100%);
+}
+
+*,*::before,*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: "Roboto", sans-serif;
+    background-color: var(--CharcoalGrey);
+}
+
+li{
+    list-style: none;
+}
+
+h1{
+    font-size: min(10vw, 2.5rem);
+}
+
+h2{
+    font-size: min(12vw, 3rem);   
+}
+
+p{
+    font-size: 16px;
+}
+
+img, svg, button, input{
+    display: block;
+}
+
+main{
+    background-color: var(--White);
+}
+
+/* Signup Window */
+.signup-image-container{
+    width: 100%;
+    height: 18rem;
+    background-image: url("assets/images/illustration-sign-up-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    border-radius: 0 0 20px 20px;
+}
+
+.signup-content-container{
+    padding: 2rem 1.5rem;
+}
+
+.signup-title, .signup-text, .list-of-updates{
+    margin-bottom: 1.5rem;
+}
+
+.update-list-item{
+    display: flex;
+    align-items: flex-start;
+}
+
+.update-list-item:not(:last-child){
+    margin-bottom: 0.8rem;
+}
+
+.list-check-mark{
+    margin-right: 0.8rem;
+}
+
+label[for="email"], .input-error-message{
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: inline-block;
+}
+
+input[type="email"], button[type="submit"]{
+    width: 100%;
+    padding: 0.7rem 1.4rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+label[for="email"]{
+    width: 40%;
+}
+
+.input-error-message{
+    color: var(--Tomato);
+    width: 60%;
+    text-align: right;
+}
+
+input[type="email"]{
+    appearance: none;
+    border: 1px solid var(--Grey);
+    margin-bottom: 1rem;
+}
+
+input[type="email"]:focus{
+    border-color: var(--CharcoalGrey);
+    color: var(--CharcoalGrey);
+}
+
+input[type="email"]:valid{
+    border-color: var(--CharcoalGrey);
+    background-color: var(--White);
+}
+
+input[type="email"]:invalid{
+    border-color: var(--Tomato);
+    background-color: var(--veryLightTomato);
+    color: var(--Tomato);
+}
+
+button[type="submit"]{
+    background-color: var(--DarkSlateGrey);
+    color: var(--White);
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover{
+    background-image: linear-gradient(to right, var(--flourescentPink), var(--Tomato));
+}
+
+/* Success Window */
+#success-window{
+    padding: 20vh 1.5rem;
+    height: 100vh;
+    display: none;
+}
+
+.success-check-img{
+    margin-bottom: 2.5rem;
+    
+}
+
+.subscription-thankyou-message{
+    margin-bottom: 1.5rem;
+}
+
+#user-email{
+    font-weight: 700;
+}
+
+.dismiss{
+    position: relative;
+    bottom: -20vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Attribution */
+.attribution p{ 
+  font-size: 11px; 
+  text-align: center; 
+}
+
+.attribution a { 
+  color: hsl(228, 45%, 44%); 
+}
+
+/*Media Query  */
+@media screen and (min-width: 1025px){
+    main{
+        padding: 1.5rem;
+        border-radius: 25px;
+    }
+
+    #signup{
+        display: flex;
+        width: 700px;
+    }
+
+    .signup-content-container, .signup-image-container{
+        flex: 1;
+        width: 100%;
+        height: 100%;
+    }
+
+    .signup-image-container{
+        height: 29rem;
+        order: 2;
+        background-image: url("assets/images/illustration-sign-up-desktop.svg");
+    }
+
+    #success-window{
+       width: 500px;  
+    }
+}
